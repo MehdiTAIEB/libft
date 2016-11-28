@@ -6,20 +6,14 @@
 /*   By: mtaieb <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 20:03:56 by mtaieb            #+#    #+#             */
-/*   Updated: 2016/11/28 20:47:31 by mtaieb           ###   ########.fr       */
+/*   Updated: 2016/11/28 22:14:32 by mtaieb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s[i] != '\0')
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	while (*s)
+		write(fd, &*s++, 1);
 }
