@@ -6,32 +6,30 @@
 /*   By: mtaieb <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/05 13:13:29 by mtaieb            #+#    #+#             */
-/*   Updated: 2016/11/27 17:05:30 by mtaieb           ###   ########.fr       */
+/*   Updated: 2016/11/28 20:29:35 by mtaieb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *str, const char *to_find)
+#include <string.h>
+
+char	*ft_strstr(const char *s1, const char *s2)
 {
-	int i;
-	int y;
+	int		i;
+	int		j;
 
 	i = 0;
-	if (*to_find == '\0')
+	if (*s2 == 0)
+		return ((char *)s1);
+	while (s1[i] != '\0')
 	{
-		return (str);
-	}
-	while (str[i] != '\0')
-	{
-		y = 0;
-		while (str[i + y] == to_find[y] && str[i + y] != '0')
+		j = 0;
+		while (s1[i + j] == s2[j] && s1[i + j])
 		{
-			y++;
+			j++;
 		}
-		if (to_find[y] == '\0')
-		{
-			return (str + i);
-		}
+		if (s2[j] == '\0')
+			return ((char *)(s1 + i));
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

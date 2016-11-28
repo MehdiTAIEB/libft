@@ -6,15 +6,22 @@
 /*   By: mtaieb <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 15:23:19 by mtaieb            #+#    #+#             */
-/*   Updated: 2016/11/27 16:26:11 by mtaieb           ###   ########.fr       */
+/*   Updated: 2016/11/28 20:31:16 by mtaieb           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
 void	ft_bzero(void *s, size_t n)
 {
-	while (s[n] && n > 0)
+	size_t			i;
+	unsigned char	*new_s;
+
+	new_s = (unsigned char *)s;
+	i = 0;
+	while (i < n)
 	{
-		s[n] = 0;
-		n--;
+		new_s[i] = 0;
+		i++;
 	}
 }

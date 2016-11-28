@@ -6,7 +6,7 @@
 #    By: mtaieb <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/12 11:18:12 by mtaieb            #+#    #+#              #
-#    Updated: 2016/11/27 16:16:46 by mtaieb           ###   ########.fr        #
+#    Updated: 2016/11/28 21:05:44 by mtaieb           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,21 +45,23 @@ SRC = ft_strlen.c \
 	  ft_isascii.c \
 	  ft_isprint.c
 
-SRCI = -Iincludes
+OBJ = $(SRC:.c=.o)
 
-SRCO = $(SRC:.c=.o)
+.PHONY: all
+all : $(NAME)
 
-FLAGS = -Wall -Werror -Wextra
+$(NAME) : $(SRC)
+	gcc -Wall -Wextra -Werror -c $? -I ./includes
+	ar rc $(NAME) $(OBJ)
 
-all:
-	gcc -c $(SRC) $(FLAGS) $(SRCI)
-	ar rc $(NAME) $(SRCO)
-	ranlib $(NAME)
-
+.PHONY: clean
 clean:
-	rm -rf $(SRCO)
+	@rm -f $(OBJ)
 
+.PHONY: fclean
 fclean: clean
-	rm -rf $(NAME)
+	@rm -f $(NAME)
 
+.PHONY: re
 re: fclean all
+
