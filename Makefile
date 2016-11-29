@@ -6,7 +6,7 @@
 #    By: mtaieb <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/12 11:18:12 by mtaieb            #+#    #+#              #
-#    Updated: 2016/11/28 21:58:20 by mtaieb           ###   ########.fr        #
+#    Updated: 2016/11/29 19:47:35 by mtaieb           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,28 @@ SRC = ft_strlen.c \
 	  ft_isdigit.c \
 	  ft_isalnum.c \
 	  ft_isascii.c \
-	  ft_isprint.c
+	  ft_isprint.c \
+	  ft_memalloc.c \
+	  ft_memdel.c \
+	  ft_strnew.c \
+	  ft_strdel.c \
+	  ft_striter.c \
+	  ft_striteri.c \
+	  ft_strmap.c \
+	  ft_strmapi.c \
+	  ft_strequ.c \
+	  ft_strnequ.c \
+	  ft_strsub.c \
+	  ft_strjoin.c \
+	  ft_strtrim.c \
+	  ft_strsplit.c \
+	  ft_itoa.c \
+	  ft_putendl.c \
+	  ft_putnbr.c \
+	  ft_putendl_fd.c \
+	  ft_putnbr_fd.c \
+	  ft_strclr.c
+
 
 OBJ = $(SRC:.c=.o)
 
